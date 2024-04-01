@@ -3,8 +3,19 @@ const employee1 = {
   age: 20,
 };
 
-const result1 = employee1.scores.english;
+const result1 = checkProperties(employee1);
 
+function checkProperties(employee){
+  if(employee?.scores === undefined || employee?.scores === null){
+    return undefined;
+  }else if(employee?.scores?.english === undefined || employee?.scores?.english === null){
+    return "English score is not defined";
+  }
+}
+
+
+
+console.log(result1);
 const employee2 = {
   name: "A",
   age: 50,
@@ -13,4 +24,5 @@ const employee2 = {
   },
 };
 
-const result2 = employee2.scores.english;
+const result2 = checkProperties(employee2);
+console.log(result2);
